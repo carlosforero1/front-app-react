@@ -1,26 +1,26 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import Navegacion from "./plantilla/navegacion";
-import ListadoUsuarios from "./usuarios/ListadoUsuarios";
-import AgregarUsuario from "./usuarios/AgregarUsuario";
-import EditarUsuario from "./usuarios/EditarUsuario";
-import Panel from "./plantilla/panel";
-
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navegacion from './componentes/comunes/navegacion';
+import ListadoEstudiantes from './componentes/estudiantes/ListadoEstudiantes';
+import Inicio from './componentes/Inicio';
+import AgregarEstudiante from './componentes/estudiantes/AgregarEstudiante';
+import ListadoInscripciones from './componentes/inscripciones/ListadoInscripciones';
 
 function App() {
-  return (
-    <div className="container">
-      <BrowserRouter>
-        <Navegacion />
-        <Panel />
-        <Routes>
-          <Route exact path="/" element={<ListadoUsuarios />} /> 
-          <Route exact path="/agregar" element={<AgregarUsuario />}></Route>
-          <Route exact path="/editar/:id" element={<EditarUsuario/>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-
-  );
+    return (
+        <BrowserRouter>
+            <Navegacion />
+            <div className="container mt-4">
+                <Routes>
+                <Route exact path="/" element={<Inicio />} />
+                    <Route exact path="/" element={<ListadoEstudiantes />} />
+                    <Route path="/estudiantes" element={<ListadoEstudiantes />} />
+                    <Route path="/estudiantes/agregar" element={<AgregarEstudiante />} />
+                    <Route path="/inscripciones" element={<ListadoInscripciones />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
