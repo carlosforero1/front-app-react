@@ -5,6 +5,8 @@ import ListadoEstudiantes from './componentes/estudiantes/ListadoEstudiantes';
 import Inicio from './componentes/Inicio';
 import AgregarEstudiante from './componentes/estudiantes/AgregarEstudiante';
 import ListadoInscripciones from './componentes/inscripciones/ListadoInscripciones';
+import Login from './componentes/inicioSesion/login';
+import Register from './componentes/inicioSesion/registro';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
                     <Route path="/estudiantes" element={<ListadoEstudiantes />} />
                     <Route path="/estudiantes/agregar" element={<AgregarEstudiante />} />
                     <Route path="/inscripciones" element={<ListadoInscripciones />} />
+                    <Route path="/inicioSesion/login" component={Login} />
+                 <Route path="/inicioSesion/registro" component={Register} />
                 </Routes>
             </div>
         </BrowserRouter>

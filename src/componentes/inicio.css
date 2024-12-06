@@ -1,0 +1,168 @@
+/* General */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.inicio {
+  padding: 20px;
+}
+
+/* Header */
+.inicio-header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.inicio-header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.careers-section {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.careers-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.carousel-inner {
+  height: 150px;
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-item h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.carousel-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0056b3; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1; 
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #333; 
+}
+
+.events-section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #e7f1ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.events-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.events-section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.events-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Recursos para Estudiantes */
+.students-resources {
+  margin: 40px 0;
+}
+
+.students-resources h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.resource-box {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: center;
+}
+
+.resource-box h3 {
+  font-size: 1.2rem;
+  color: #0056b3;
+}
+
+.resource-box p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.resource-box button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.resource-box button:hover {
+  background-color: #004494;
+}
+
+/* Footer */
+.inicio-footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.inicio-footer p {
+  margin: 5px 0;
+}
