@@ -5,7 +5,7 @@ const ListadoInscripciones = () => {
     const [inscripciones, setInscripciones] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/inscripciones')
+        axios.get('/sn-app/inscripciones')
             .then((response) => setInscripciones(response.data))
             .catch((error) => console.error('Error al obtener inscripciones:', error));
     }, []);
@@ -19,6 +19,7 @@ const ListadoInscripciones = () => {
                         <th>ID</th>
                         <th>Estudiante</th>
                         <th>Materia</th>
+        
                         <th>Fecha</th>
                     </tr>
                 </thead>

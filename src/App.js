@@ -7,6 +7,7 @@ import AgregarEstudiante from './componentes/estudiantes/AgregarEstudiante';
 import ListadoInscripciones from './componentes/inscripciones/ListadoInscripciones';
 import Login from './componentes/inicioSesion/login';
 import Register from './componentes/inicioSesion/registro';
+import Biblioteca from './componentes/recurso/biblioteca';
 
 function App() {
     return (
@@ -19,8 +20,9 @@ function App() {
                     <Route path="/estudiantes" element={<ListadoEstudiantes />} />
                     <Route path="/estudiantes/agregar" element={<AgregarEstudiante />} />
                     <Route path="/inscripciones" element={<ListadoInscripciones />} />
-                    <Route path="/inicioSesion/login" component={Login} />
-                 <Route path="/inicioSesion/registro" component={Register} />
+                    <Route path="/inicioSesion" element={<Login/>} />
+                    <Route path="/recurso/biblioteca" element={<Biblioteca/>}/>
+                 <Route path="/inicioSesion/register" element={<Register/>} />
                 </Routes>
             </div>
         </BrowserRouter>

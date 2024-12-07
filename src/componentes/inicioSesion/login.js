@@ -37,7 +37,7 @@ const Login = () => {
         <button type="submit" className="auth-button">Iniciar Sesión</button>
       </form>
       <p className="auth-switch">
-        ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+        ¿No tienes cuenta? <a href="/inicioSesion/register">Regístrate aquí</a>
       </p>
     </div>
   );

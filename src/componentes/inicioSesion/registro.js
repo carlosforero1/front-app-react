@@ -12,9 +12,10 @@ const Register = () => {
       alert('Las contraseñas no coinciden');
       return;
     }
-    // Lógica de registro (puedes integrar con tu backend)
+    
     console.log('Register Attempt:', { email, password });
   };
+
 
   return (
     <div className="auth-container">

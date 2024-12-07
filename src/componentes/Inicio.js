@@ -1,10 +1,20 @@
 import React from 'react';
-import './inicio.css'; 
+import './inicio.css';
+import { useNavigate } from 'react-router-dom';
 
 const Inicio = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate('/recurso/biblioteca'); // Ruta de destino
+  };
+
+
   return (
+    
     <div className="inicio">
-        
+
       <header className="inicio-header">
         <h1>Universidad De Caldas</h1>
         <p>Formando líderes del mañana con excelencia académica</p>
@@ -14,7 +24,7 @@ const Inicio = () => {
         <div className="container mt-5">
           <h1 className="text-center mb-4">Nuestras Carreras</h1>
           <div id="carrerasCarousel" className="carousel slide" data-bs-ride="carousel">
-         
+
             <div className="carousel-indicators">
               {[...Array(9)].map((_, index) => (
                 <button
@@ -90,22 +100,28 @@ const Inicio = () => {
 
       <section className="students-resources">
         <h2>Recursos para Estudiantes</h2>
-        <div className="resource-box">
-          <h3>Biblioteca Virtual</h3>
-          <p>Accede a libros, artículos y más desde cualquier lugar.</p>
-          <button>Explorar</button>
-        </div>
-        <div className="resource-box">
-          <h3>Plataforma de Notas</h3>
-          <p>Consulta tus calificaciones y progreso académico.</p>
-          <button>Ir a la Plataforma</button>
-        </div>
-        <div className="resource-box">
-          <h3>Calendario Académico</h3>
-          <p>Revisa las fechas importantes del semestre.</p>
-          <button>Ver Calendario</button>
+
+        <div className="container text-center">
+          <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div className="resource-box">
+              <h3>Biblioteca Virtual</h3>
+              <p>Accede a libros, artículos y más desde cualquier lugar.</p>
+              <button onClick={handleNavigation} className="btn btn-primary">Explorar</button>
+            </div>
+            <div className="resource-box">
+              <h3>Plataforma de Notas</h3>
+              <p>Consulta tus calificaciones y progreso académico.</p>
+              <button>Ir a la Plataforma</button>
+            </div>
+            <div className="resource-box">
+              <h3>Calendario Académico</h3>
+              <p>Revisa las fechas importantes del semestre.</p>
+              <button>Ver Calendario</button>
+            </div>
+          </div>
         </div>
       </section>
+
 
       <footer className="inicio-footer">
         <p>© 2024 Universidad Central. Todos los derechos reservados.</p>
