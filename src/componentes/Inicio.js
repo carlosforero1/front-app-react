@@ -7,7 +7,7 @@ const Inicio = () => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    navigate('/recurso/biblioteca'); // Ruta de destino
+    navigate('/recurso/biblioteca'); 
   };
 
 

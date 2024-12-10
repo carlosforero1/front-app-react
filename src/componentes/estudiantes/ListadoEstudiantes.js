@@ -3,11 +3,11 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const ListadoEstudiantes = () => {
-    const [estudiantes, setEstudiantes] = useState([]);
+    const [libro, setLibros] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/estudiantes')
-            .then((response) => setEstudiantes(response.data))
+        axios.get('http://localhost:8080/api/libros')
+            .then((response) => setLibros(response.data))
             .catch((error) => console.error('Error al obtener estudiantes:', error));
     }, []);
 
@@ -19,19 +19,21 @@ const ListadoEstudiantes = () => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Correo</th>
+                        <th>Autor</th>
+                        <th>Género</th>
+                        <th>Título</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {estudiantes.map((estudiante) => (
-                        <tr key={estudiante.id}>
-                            <td>{estudiante.id}</td>
-                            <td>{estudiante.nombre}</td>
-                            <td>{estudiante.correo}</td>
+                    {libro.map((libro) => (
+                        <tr key={libro.id}>
+                            <td>{libro.id}</td>
+                            <td>{libro.autor}</td>
+                            <td>{libro.genero}</td>
+                            <td>{libro.titulo}</td>
                             <td>
-                                <Link to={`/estudiantes/editar/${estudiante.id}`} className="btn btn-warning">Editar</Link>
+                                <Link to={`/estudiantes/editar/${libro.id}`} className="btn btn-warning">Editar</Link>
                             </td>
                         </tr>
                     ))}

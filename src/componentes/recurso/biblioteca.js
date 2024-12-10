@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 function Biblioteca() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [books] = useState([
-    { id: 1, title: "Cien Años de Soledad", author: "Gabriel García Márquez" },
-    { id: 2, title: "Don Quijote de la Mancha", author: "Miguel de Cervantes" },
-    { id: 3, title: "1984", author: "George Orwell" },
-    { id: 4, title: "El Principito", author: "Antoine de Saint-Exupéry" },
-    { id: 5, title: "Crónica de una Muerte Anunciada", author: "Gabriel García Márquez" },
-  ]);
+  const [books, setBooks] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
 
-  const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/libros"); 
+        console.log(response.data);
+        setBooks(response.data);
+      } catch (error) {
+        console.error("Error al cargar los libros", error);
+      }
+    };
+    fetchBooks();
+  }, []);
+
+  const toggleModal = (book) => {
+    setSelectedBook(book); 
+    setModal(!modal);
+  };
 
   return (
     <div className="library-page">
@@ -21,26 +32,18 @@ function Biblioteca() {
         <p>Encuentra tus libros favoritos desde cualquier lugar</p>
       </header>
 
-      <div className="search-bar text-center my-4">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Buscar por título..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-
       <div className="book-list container">
-        {filteredBooks.length > 0 ? (
+        {books.length >= 0 ? (
           <div className="row">
-            {filteredBooks.map((book) => (
+            {books.map((book) => (
               <div key={book.id} className="col-md-4 mb-4">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">{book.title}</h5>
-                    <p className="card-text">Autor: {book.author}</p>
-                    <button className="btn btn-primary">Leer Más</button>
+                    <h5 className="card-title">{book.title}</h5> 
+                    <p className="card-text">Autor: {book.author}</p> 
+                    <Button color="primary" onClick={() => toggleModal(book)}>
+                      Leer Más
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -50,6 +53,31 @@ function Biblioteca() {
           <p className="text-center">No se encontraron libros.</p>
         )}
       </div>
+
+      <Modal isOpen={modal} toggle={toggleModal}>
+        <ModalHeader toggle={toggleModal}>Detalles del Libro</ModalHeader>
+        <ModalBody>
+          {selectedBook ? (
+            <div>
+              <h3>{selectedBook.title}</h3>
+              <p><strong>Autor:</strong> {selectedBook.author}</p>
+              <p><strong>Editorial:</strong> {selectedBook.editorial}</p>
+              <p><strong>Año de Publicación:</strong> {selectedBook.anio_publicacion}</p>
+              <p><strong>Género:</strong> {selectedBook.genero}</p>
+              <p><strong>Copias Disponibles:</strong> {selectedBook.copias_disponibles}</p>
+              {/* Mostrar imagen si existe */}
+              {selectedBook.image && (
+                <img src={selectedBook.image} alt={selectedBook.title} className="img-fluid" />
+              )}
+            </div>
+          ) : (
+            <p>Cargando detalles...</p>
+          )}
+        </ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={toggleModal}>Cerrar</Button>
+        </ModalFooter>
+      </Modal>
     </div>
   );
 }

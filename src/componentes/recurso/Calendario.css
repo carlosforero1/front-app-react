@@ -1,0 +1,36 @@
+.calendario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .calendario {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .event-details {
+    margin-left: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 300px;
+  }
+  
+  .highlight {
+    background-color: #ffeb3b !important;
+    border-radius: 50%;
+  }
+  
+  h3 {
+    color: #007bff;
+  }
+  
+  p {
+    color: #555;
+  }
+  

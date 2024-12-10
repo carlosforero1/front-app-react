@@ -54,7 +54,7 @@ const Register = () => {
         <button type="submit" className="auth-button">Registrarse</button>
       </form>
       <p className="auth-switch">
-        ¿Ya tienes cuenta? <a href="/login">Inicia sesión aquí</a>
+        ¿Ya tienes cuenta? <a href="/inicioSesion">Inicia sesión aquí</a>
       </p>
     </div>
   );
