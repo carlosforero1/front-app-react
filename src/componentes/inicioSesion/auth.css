@@ -5,8 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f7fb; /* Fondo suave */
+  height: 80vh;
+  background-color: #f4f7fb;  
 }
 
 /* Tarjeta de inicio de sesión */

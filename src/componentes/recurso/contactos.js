@@ -27,22 +27,22 @@ const RedesSociales = () => {
       <ul>
         <li>
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="facebook-icon.png" alt="Facebook" /> Facebook
+            Facebook
           </a>
         </li>
         <li>
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="twitter-icon.png" alt="Twitter" /> Twitter
+            Twitter
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="instagram-icon.png" alt="Instagram" /> Instagram
+           Instagram
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="linkedin-icon.png" alt="LinkedIn" /> LinkedIn
+            LinkedIn
           </a>
         </li>
       </ul>

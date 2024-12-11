@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './auth.css'; // Añadir archivo CSS para estilizar el formulario
+import './auth.css'; 
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -43,7 +43,7 @@ const Login = () => {
         <h2>Iniciar Sesión</h2>
         <form onSubmit={handleLogin}>
           <div className="input-group">
-            <label>Usuario</label>
+            <label >Usuario</label>
             <input
               type="text"
               value={username}

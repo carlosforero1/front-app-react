@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 const AgregarEstudiante = () => {
     const [nombre, setNombre] = useState('');
     const [correo, setCorreo] = useState('');

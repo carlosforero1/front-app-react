@@ -9,7 +9,9 @@ const Inicio = () => {
   const handleNavigation = () => {
     navigate('/recurso/biblioteca'); 
   };
-
+  const handleNavigation2 = () => {
+    navigate('/calendario'); 
+  };
 
   return (
     
@@ -25,19 +27,6 @@ const Inicio = () => {
           <h1 className="text-center mb-4">Nuestras Carreras</h1>
           <div id="carrerasCarousel" className="carousel slide" data-bs-ride="carousel">
 
-            <div className="carousel-indicators">
-              {[...Array(9)].map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  data-bs-target="#carrerasCarousel"
-                  data-bs-slide-to={index}
-                  className={index === 0 ? 'active' : ''}
-                  aria-current={index === 0 ? 'true' : undefined}
-                  aria-label={`Slide ${index + 1}`}
-                ></button>
-              ))}
-            </div>
 
             <div className="carousel-inner">
               {[
@@ -111,12 +100,12 @@ const Inicio = () => {
             <div className="resource-box">
               <h3>Plataforma de Notas</h3>
               <p>Consulta tus calificaciones y progreso académico.</p>
-              <button>Ir a la Plataforma</button>
+              <button className="btn btn-primary">Ir a la Plataforma</button>
             </div>
             <div className="resource-box">
               <h3>Calendario Académico</h3>
               <p>Revisa las fechas importantes del semestre.</p>
-              <button>Ver Calendario</button>
+              <button className="btn btn-primary" onClick={handleNavigation2}>Ver Calendario</button>
             </div>
           </div>
         </div>

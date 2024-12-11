@@ -1,20 +1,45 @@
-.card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .card-text {
-    color: #555;
-  }
-  
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2.text-center {
+  color: #4caf93;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.resource-box {
+  background-color: #f1f1f1; 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-box:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.resource-box h5 {
+  color: #4caf93; 
+  font-size: 1.2rem;
+}
+
+.resource-box p {
+  color: #555; 
+  font-size: 0.95rem;
+}
+
+.fa {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.h5, h5 {
+  font-size: 1.25rem;
+  color: #4caf93 !important;
+}

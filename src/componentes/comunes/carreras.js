@@ -20,7 +20,7 @@ const Carreras = () => {
       <h2 className="text-center mb-4">Carreras Disponibles</h2>
       <Row>
         {carreras.map((carrera, index) => (
-          <Col sm="12" md="4" lg="3" key={index} className="mb-4">
+          <Col sm="6" md="3" lg="3" key={index} className="mb-4">
             <Card>
               <CardBody>
                 <CardTitle tag="h5">

@@ -8,7 +8,7 @@ const Admin = () => {
   const role = localStorage.getItem("role");
 
   if (role !== "admin") {
-    navigate("/login");  // Redirige a login si no es admin
+    navigate("/inicioSesion");  // Redirige a login si no es admin
   }
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Navbar from '../administrador/navegacion/nave';
 
 const ListadoEstudiantes = () => {
     const [libro, setLibros] = useState([]);
@@ -13,6 +14,7 @@ const ListadoEstudiantes = () => {
 
     return (
         <div>
+             <Navbar />
             <h2>Listado de Estudiantes</h2>
             <Link to="/estudiantes/agregar" className="btn btn-primary">Agregar Estudiante</Link>
             <table className="table">

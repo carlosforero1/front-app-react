@@ -1,31 +1,39 @@
-// Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState(null);
+  const navigate = useNavigate();
 
-  return (
-    <nav className="navbar">
-      <ul>
-        <li><Link to="/">Inicio</Link></li>
-        {role === "admin" && (
-          <>
-            <li><Link to="/">Dashboard Admin</Link></li>
-            <li><Link to="/">Usuarios</Link></li>
-            <li><Link to="/">Ajustes</Link></li>
-          </>
-        )}
-        {role === "estudiante" && (
-          <li><Link to="/cursos">Mis Cursos</Link></li>
-        )}
-        {role === "profesor" && (
-          <li><Link to="/materias">Mis Materias</Link></li>
-        )}
-        <li><Link to="/perfil">Perfil</Link></li>
-      </ul>
-    </nav>
-  );
+  useEffect(() => {
+    const savedRole = localStorage.getItem("role");
+    setRole(savedRole);
+  }, []);
+
+  
+  const handleLogout = () => {
+    localStorage.removeItem("role");
+    setRole(null); 
+    navigate("/inicioSesion"); 
+  };
+
+  
+  if (role === "admin") {
+    return (
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">materias</Link></li>
+          <li><Link to="/estudiantes">estudiantes</Link></li>
+          <li><Link to="/notas">notas</Link></li>
+          <li><Link to="/">curso</Link></li>
+          <li><Link to="/">libros</Link></li>
+          <li><button onClick={handleLogout}>Cerrar sesión</button></li>
+        </ul>
+      </nav>
+    );
+  }
+
+  return null;
 };
 
 export default Navbar;

@@ -65,7 +65,7 @@ function Biblioteca() {
               <p><strong>Año de Publicación:</strong> {selectedBook.anio_publicacion}</p>
               <p><strong>Género:</strong> {selectedBook.genero}</p>
               <p><strong>Copias Disponibles:</strong> {selectedBook.copias_disponibles}</p>
-              {/* Mostrar imagen si existe */}
+        
               {selectedBook.image && (
                 <img src={selectedBook.image} alt={selectedBook.title} className="img-fluid" />
               )}

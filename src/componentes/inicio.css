@@ -1,168 +1,153 @@
-/* General */
+
 body {
   font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; 
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
   color: #333;
 }
 
 .inicio {
-  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Header */
 .inicio-header {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #0056b3;
+  background-color: #4caf93;
   color: white;
-  border-radius: 8px;
+  text-align: center;
+  padding: 20px 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .inicio-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   margin: 0;
 }
 
 .inicio-header p {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   margin-top: 10px;
 }
+
 .careers-section {
-  margin: 40px auto;
-  text-align: center;
+  background-color: white;
+  padding: 40px 20px;
 }
 
 .careers-section h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  color: #4caf93;
+  font-size: 2em;
 }
 
-.carousel-inner {
-  height: 150px;
-  display: flex;
-  background: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.carousel-inner h5 {
+  font-size: 1.5em;
+  color: #4caf93;
 }
 
-.carousel-item {
-  text-align: center;
-  padding: 20px;
-}
-
-.carousel-item h5 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #0056b3;
-}
-
-.carousel-item p {
-  font-size: 1rem;
+.carousel-inner p {
+  font-size: 1em;
   color: #555;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #0056b3; 
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  opacity: 1; 
-}
-
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  background-color: #333; 
+  filter: invert(100%);
 }
 
 .events-section {
-  margin: 40px 0;
+  background-color: #eef8f4; 
   padding: 20px;
-  background-color: #e7f1ff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .events-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  text-align: center;
+  color: #4caf93;
+  font-size: 1.8em;
 }
 
 .events-section ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  font-size: 1rem;
 }
 
-.events-section ul li {
-  margin-bottom: 10px;
+.events-section li {
+  font-size: 1.1em;
+  margin: 10px 0;
 }
 
-/* Recursos para Estudiantes */
 .students-resources {
-  margin: 40px 0;
+  background-color: white;
+  padding: 40px 20px;
 }
 
 .students-resources h2 {
+  color: #4caf93;
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .resource-box {
-  background-color: #fff;
-  padding: 20px;
-  margin: 10px auto;
+  background-color: #f1f1f1;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  padding: 15px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
 
 .resource-box h3 {
-  font-size: 1.2rem;
-  color: #0056b3;
+  color: #4caf93;
+  font-size: 1.2em;
 }
 
 .resource-box p {
-  margin: 10px 0;
-  font-size: 1rem;
   color: #555;
 }
 
-.resource-box button {
-  background-color: #0056b3;
-  color: white;
+.resource-box .btn-primary {
+  background-color: #4caf93;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.resource-box button:hover {
-  background-color: #004494;
-}
-
-/* Footer */
-.inicio-footer {
-  margin-top: 40px;
-  text-align: center;
-  padding: 20px;
-  background-color: #0056b3;
   color: white;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.resource-box .btn-primary:hover {
+  background-color: #3b9875;
+  margin: 5px auto;
+  width: 150px;
+}
+
+.inicio-footer {
+  background-color: #4caf93;
+  color: white;
+  text-align: center;
+  padding: 20px 15px;
+  margin-top: auto;
+  font-size: 0.9em;
 }
 
 .inicio-footer p {
   margin: 5px 0;
+}
+.resource-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 100% !important;
+  text-align: center;
+}
+
+.inicio-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #c3c3c3;
 }
