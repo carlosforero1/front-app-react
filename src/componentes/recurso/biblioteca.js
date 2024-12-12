@@ -59,7 +59,7 @@ function Biblioteca() {
         <ModalBody>
           {selectedBook ? (
             <div>
-              <h3>{selectedBook.title}</h3>
+              <h3>{selectedBook.titulo}</h3>
               <p><strong>Autor:</strong> {selectedBook.author}</p>
               <p><strong>Editorial:</strong> {selectedBook.editorial}</p>
               <p><strong>Año de Publicación:</strong> {selectedBook.anio_publicacion}</p>

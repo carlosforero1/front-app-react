@@ -17,6 +17,10 @@ import Admin from './componentes/administrador/navegacion/admin';
 import Nota from './componentes/administrador/nota/listarNota';
 import Navbar from './componentes/administrador/navegacion/nave';
 
+
+import Curso from './componentes/recurso/curso';
+import Materias from './componentes/recurso/materias';
+
 function App() {
   const [role, setRole] = useState(null);
 
@@ -48,6 +52,10 @@ function App() {
           <Route path="/calendario" element={<Calendario />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/notas" element={<Nota />} />
+
+          <Route path="/curso" element={<Curso />} />
+          <Route path="/materia" element={<Materias />} />
+
         </Routes>
       </div>
     </BrowserRouter>

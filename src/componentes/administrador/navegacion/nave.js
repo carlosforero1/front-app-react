@@ -22,11 +22,11 @@ const Navbar = () => {
     return (
       <nav className="navbar">
         <ul>
-          <li><Link to="/">materias</Link></li>
+          <li><Link to="/materia">materias</Link></li>
           <li><Link to="/estudiantes">estudiantes</Link></li>
           <li><Link to="/notas">notas</Link></li>
-          <li><Link to="/">curso</Link></li>
-          <li><Link to="/">libros</Link></li>
+          <li><Link to="/curso">curso</Link></li>
+          <li><Link to="/list/libro">libros</Link></li>
           <li><button onClick={handleLogout}>Cerrar sesión</button></li>
         </ul>
       </nav>
