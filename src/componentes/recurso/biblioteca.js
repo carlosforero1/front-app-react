@@ -1,73 +1,96 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Table, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function Biblioteca() {
-  const [books, setBooks] = useState([]);
+const LibroTable = () => {
+  const [libros, setLibros] = useState([]);
   const [modal, setModal] = useState(false);
-  const [selectedBook, setSelectedBook] = useState(null);
+  const [selectedLibro, setSelectedLibro] = useState(null);
+  const [error, setError] = useState(null);
 
+  // Cargar los libros al iniciar el componente
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchLibros = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/libros"); 
-        console.log(response.data);
-        setBooks(response.data);
+        const response = await axios.get("http://localhost:8080/api/libros");
+        setLibros(response.data);
       } catch (error) {
-        console.error("Error al cargar los libros", error);
+        setError("Error al obtener los libros.");
+        console.error("Error al obtener los libros:", error);
       }
     };
-    fetchBooks();
+
+    fetchLibros();
   }, []);
 
-  const toggleModal = (book) => {
-    setSelectedBook(book); 
+  const toggleModal = (libro) => {
+    setSelectedLibro(libro);
     setModal(!modal);
   };
 
+  const handleDelete = (id) => {
+    console.log(`Eliminando libro con ID: ${id}`);
+  };
+
+  const handleEdit = (id) => {
+    console.log(`Editando libro con ID: ${id}`);
+  };
+
   return (
-    <div className="library-page">
-      <header className="text-center">
-        <h1>Biblioteca Virtual</h1>
-        <p>Encuentra tus libros favoritos desde cualquier lugar</p>
-      </header>
+    <div className="container mt-4">
+      <h1>Lista de Libros</h1>
 
-      <div className="book-list container">
-        {books.length >= 0 ? (
-          <div className="row">
-            {books.map((book) => (
-              <div key={book.id} className="col-md-4 mb-4">
-                <div className="card">
-                  <div className="card-body">
-                    <h5 className="card-title">{book.title}</h5> 
-                    <p className="card-text">Autor: {book.author}</p> 
-                    <Button color="primary" onClick={() => toggleModal(book)}>
-                      Leer Más
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center">No se encontraron libros.</p>
-        )}
-      </div>
+      {/* Mostrar error si ocurre */}
+      {error && <div className="alert alert-danger">{error}</div>}
 
+      <Table striped>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Género</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {libros.length === 0 ? (
+            <tr>
+              <td colSpan="5" className="text-center">No hay libros disponibles</td>
+            </tr>
+          ) : (
+            libros.map((libro) => (
+              <tr key={libro.id}>
+                <td>{libro.id}</td>
+                <td>{libro.titulo}</td>
+                <td>{libro.autor}</td>
+                <td>{libro.genero}</td>
+                <td>
+                  <Button color="info" onClick={() => toggleModal(libro)}>Ver</Button>
+                  <Button color="warning" onClick={() => handleEdit(libro.id)} className="ml-2">Editar</Button>
+                  <Button color="danger" onClick={() => handleDelete(libro.id)} className="ml-2">Eliminar</Button>
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </Table>
+
+      {/* Modal para mostrar los detalles del libro */}
       <Modal isOpen={modal} toggle={toggleModal}>
         <ModalHeader toggle={toggleModal}>Detalles del Libro</ModalHeader>
         <ModalBody>
-          {selectedBook ? (
+          {selectedLibro ? (
             <div>
-              <h3>{selectedBook.titulo}</h3>
-              <p><strong>Autor:</strong> {selectedBook.author}</p>
-              <p><strong>Editorial:</strong> {selectedBook.editorial}</p>
-              <p><strong>Año de Publicación:</strong> {selectedBook.anio_publicacion}</p>
-              <p><strong>Género:</strong> {selectedBook.genero}</p>
-              <p><strong>Copias Disponibles:</strong> {selectedBook.copias_disponibles}</p>
-        
-              {selectedBook.image && (
-                <img src={selectedBook.image} alt={selectedBook.title} className="img-fluid" />
+              <h3>{selectedLibro.titulo}</h3>
+              <p><strong>Autor:</strong> {selectedLibro.autor}</p>
+              <p><strong>Editorial:</strong> {selectedLibro.editorial || 'No disponible'}</p>
+              <p><strong>Año de Publicación:</strong> {selectedLibro.anio_publicacion}</p>
+              <p><strong>Género:</strong> {selectedLibro.genero}</p>
+              <p><strong>Copias Disponibles:</strong> {selectedLibro.copias_disponibles}</p>
+
+              {selectedLibro.imagen && (
+                <img src={selectedLibro.imagen} alt={selectedLibro.titulo} className="img-fluid" />
               )}
             </div>
           ) : (
@@ -80,6 +103,6 @@ function Biblioteca() {
       </Modal>
     </div>
   );
-}
+};
 
-export default Biblioteca;
+export default LibroTable;

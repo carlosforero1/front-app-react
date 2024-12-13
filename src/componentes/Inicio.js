@@ -97,11 +97,7 @@ const Inicio = () => {
               <p>Accede a libros, artículos y más desde cualquier lugar.</p>
               <button onClick={handleNavigation} className="btn btn-primary">Explorar</button>
             </div>
-            <div className="resource-box">
-              <h3>Plataforma de Notas</h3>
-              <p>Consulta tus calificaciones y progreso académico.</p>
-              <button className="btn btn-primary">Ir a la Plataforma</button>
-            </div>
+          
             <div className="resource-box">
               <h3>Calendario Académico</h3>
               <p>Revisa las fechas importantes del semestre.</p>
