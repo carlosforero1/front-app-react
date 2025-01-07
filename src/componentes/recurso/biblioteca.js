@@ -28,14 +28,6 @@ const LibroTable = () => {
     setModal(!modal);
   };
 
-  const handleDelete = (id) => {
-    console.log(`Eliminando libro con ID: ${id}`);
-  };
-
-  const handleEdit = (id) => {
-    console.log(`Editando libro con ID: ${id}`);
-  };
-
   return (
     <div className="container mt-4">
       <h1>Lista de Libros</h1>
@@ -67,8 +59,6 @@ const LibroTable = () => {
                 <td>{libro.genero}</td>
                 <td>
                   <Button color="info" onClick={() => toggleModal(libro)}>Ver</Button>
-                  <Button color="warning" onClick={() => handleEdit(libro.id)} className="ml-2">Editar</Button>
-                  <Button color="danger" onClick={() => handleDelete(libro.id)} className="ml-2">Eliminar</Button>
                 </td>
               </tr>
             ))

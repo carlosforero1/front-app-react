@@ -17,6 +17,9 @@ const Navegacion = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/carreras">Carreras</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/notas">pruebas</Link>
+                        </li>
                    
                     </ul>
                 </div>
